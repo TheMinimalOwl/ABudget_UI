@@ -1,0 +1,21 @@
+# Dependencias y builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Entorno y secretos
+.env
+.env.local
+.env.*.local
+
+# Datos locales y backups
+.data/
+backups/
+
+# Herramientas locales
+.tools/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+*.log

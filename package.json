@@ -1,0 +1,33 @@
+{
+  "name": "ui-actualbudget",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run build -w @uiab/contracts && concurrently -k -n bff,web -c green,cyan \"npm:dev:bff\" \"npm:dev:web\"",
+    "dev:bff": "npm run dev -w @uiab/bff",
+    "dev:web": "npm run dev -w @uiab/web",
+    "build": "npm run build -w @uiab/contracts && npm run build -w @uiab/bff && npm run build -w @uiab/web",
+    "typecheck": "npm run typecheck -w @uiab/contracts && npm run typecheck -w @uiab/bff && npm run typecheck -w @uiab/web",
+    "spike": "cmd /c scripts\\spike.cmd",
+    "spike:sync": "cmd /c scripts\\spike.cmd --sync",
+    "explore": "cmd /c scripts\\run.cmd scripts\\explore.mjs",
+    "inspect:db": "cmd /c scripts\\run.cmd scripts\\inspect-db.mjs",
+    "preview": "cmd /c scripts\\run.cmd scripts\\preview-server.mjs",
+    "spike:node": "node --env-file=.env scripts/spike.mjs",
+    "explore:node": "node --env-file=.env scripts/explore.mjs"
+  },
+  "dependencies": {
+    "@actual-app/api": "26.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "10.0.6"
+  }
+}

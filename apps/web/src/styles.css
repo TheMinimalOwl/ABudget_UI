@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f7f6f2;
+  --color-sidebar: #efede7;
+  --color-card: #ffffff;
+  --color-ink: #1f211d;
+  --color-ink-soft: #4c4f47;
+  --color-muted: #7c7e74;
+  --color-line: #e7e4dc;
+  --color-brand: #1f6f5c;
+  --color-brand-2: #2e8067;
+  --color-brand-soft: #e4efea;
+  --color-terra: #b5643f;
+  --color-terra-soft: #f6e8e1;
+  --color-lav: #8b7bb8;
+  --color-sky: #5b8db8;
+  --color-sage: #6fa88a;
+
+  --font-sans:
+    "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #d8e7e0;
+}
+
+@keyframes norte-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: norte-fade-up 0.35s ease both;
+}
+
+.delay-1 {
+  animation-delay: 0.04s;
+}
+
+.delay-2 {
+  animation-delay: 0.08s;
+}
+
+.delay-3 {
+  animation-delay: 0.12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
